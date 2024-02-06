@@ -3,16 +3,21 @@ import ClassComponentProps from './components/propsandstates/ClassComponentProps
 import { FunctionalCompProps } from './components/propsandstates/FunctionalCompProps';
 import ClassComponentState from './components/propsandstates/ClassComponentState';
 import { SetState } from './components/propsandstates/SetState';
-import LoginPage from './components/account/LoginPage';
-import SignInPage from './components/account/SignInPage';
+import LoginPage from './components/accountusingFC/LoginPage';
+import SignInPage from './components/accountusingFC/SignInPage';
+import DashBoard from './components/postlogin/DashBoard';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 class App extends Component {
     render() {
         return(
-            <div>
-              {/* <LoginPage /> */}
-              <SignInPage />
-            </div>
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/" element={<SignInPage />} />
+                    <Route path="/login" element={<LoginPage {...this.props} />} />
+                    <Route path="/dashboard" element={<DashBoard />} />
+                </Routes>
+            </BrowserRouter>
         )
     }
 }
