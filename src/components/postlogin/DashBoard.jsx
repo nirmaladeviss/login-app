@@ -1,9 +1,15 @@
 import React, { Component } from 'react'
+import FormBasics from '../FormBasics'
+import LifeCycleA from '../LifeCycleA'
+import LifeCycleB from '../LifeCycleB'
 
 export default class DashBoard extends Component {
   render() {
     return (
-      <div>DashBoard</div>
+      <div>
+        <FormBasics />
+        <LifeCycleA />
+      </div>
     )
   }
 }
